@@ -132,11 +132,11 @@ class GenerateData(object):
         # Save output file to hold all current data, then remove Fishbowl generated files.
         self.writeOutputFile(pathToRawData, "PreviousData.csv", ["date", "totalQtyOverDue", "totalPriceOverDue", "totalQty", "totalPrice"])
         self.removeFishbowlFiles(pathToRawData)
-        self.logger.info(f"Finished processing files. Compiled output file can be found at: {os.path.join(pathToSaveOutputFile, 'PreviousData.csv')}")
+        self.logger.info(f"Finished processing files. Compiled output file can be found at: {os.path.join(pathToSaveOutputFile, outputFileName)}")
         self.logger.info("-" * 40)
         
         if openFile:
-            os.startfile(os.path.abspath(os.path.join(pathToRawData, 'PreviousData.csv')))
+            os.startfile(os.path.abspath(os.path.join(pathToRawData, outputFileName)))
 
 if __name__ == "__main__":
     rawDataPath = ""
